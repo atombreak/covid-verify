@@ -5,7 +5,7 @@ const express = require("express");
 const json = require('json-server');
 
 const app = express();
-const port = 9000 || process.env.PORT
+const port = process.env.PORT || 9000;
 
 app.use(express.static(path.join(__dirname,'..','build')));
 app.use('/api', json.router(path.join(__dirname,'..','db.json')));
