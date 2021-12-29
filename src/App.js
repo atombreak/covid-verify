@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import'./main.css';
+import React, { Component, Suspense, lazy } from 'react';
+import { Switch as Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
-function App() {
+import Loader from './Loader.js';
+
+import { Context } from './data-context.js';
+
+const Header = lazy(e => import('./Header.js'));
+const Verify = lazy(e => import('./Verify'));
+const Generate = lazy(e => import('./Generate.js'));
+const ViewCode = lazy(e => import('./ViewCode.js'));
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        a: 1, b: 2, c: 4,
+    }
+  }
+
+  render () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={this.state}>
+    <Router>
+    <Suspense fallback={<Loader />}>
+    <Routes>
+    <Route exact path='/'>
+    <Header> </Header>
+    </Route>
+    <Route exact path='/verify'>
+    <Verify> </Verify>
+    </Route>
+    <Route exact path='/generate'>
+    <Generate />
+    </Route>
+    <Route path='/view-code'>
+    <ViewCode />
+    </Route>
+    <Route path='*'>
+      <p> 404 </p>
+    </Route>
+    </Routes>
+    </Suspense>
+    </Router>
+    </Context.Provider>
   );
+}
 }
 
 export default App;

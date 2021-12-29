@@ -1,0 +1,214 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nrc": "1234",
+      "name": "Michael Phiri",
+      "address": "195/27 Chawama",
+      "town": "Lusaka",
+      "dob": "21/01/04",
+      "tel": "0979989900"
+    },
+    {
+      "id": 2
+    },
+    {
+      "nrc": "435325",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 3
+    },
+    {
+      "nrc": "4344455",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 4
+    },
+    {
+      "nrc": "990000",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 5
+    },
+    {
+      "nrc": "",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 6
+    },
+    {
+      "nrc": "",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 7
+    },
+    {
+      "nrc": "",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 8
+    },
+    {
+      "nrc": "",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 9
+    },
+    {
+      "nrc": "9000099",
+      "name": "uu",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 10
+    },
+    {
+      "nrc": "452",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 11
+    },
+    {
+      "nrc": "3242",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 12
+    },
+    {
+      "nrc": "3563",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 13
+    },
+    {
+      "nrc": "35634",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 14
+    },
+    {
+      "nrc": "354",
+      "name": "",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 15
+    },
+    {
+      "nrc": "41667287",
+      "name": "PRIME TV",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 16
+    },
+    {
+      "nrc": "",
+      "name": "Mi",
+      "dob": "",
+      "address": "",
+      "tel": "",
+      "town": "",
+      "id": 17
+    },
+    {
+      "nrc": "213345",
+      "name": "michael phiri",
+      "dob": "21/01/04",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 18
+    },
+    {
+      "nrc": "5456465",
+      "name": "michael phiri",
+      "dob": "23345687",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 19
+    },
+    {
+      "nrc": "6009988899099",
+      "name": "michael phiri",
+      "dob": "212233",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 20
+    },
+    {
+      "nrc": "8899890",
+      "name": "michael phiri",
+      "dob": "21/01/04",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 21
+    },
+    {
+      "nrc": "2123",
+      "name": "michael phiri",
+      "dob": "21/01/04",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 22
+    },
+    {
+      "nrc": "2344556",
+      "name": "michael phiri",
+      "dob": "21/01/04",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 23
+    },
+    {
+      "nrc": "45567",
+      "name": "michael phiri",
+      "dob": "21/01/04",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 24
+    }
+  ]
+}
