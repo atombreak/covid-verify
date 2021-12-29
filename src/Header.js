@@ -111,10 +111,8 @@ class Header extends Component {
                   { this.state.faq.map(faq => <FAQ data={faq} />) }
                 </div>
                </div>
-               <button className='px-14 mx-4 my-8 bg-green-400 md:mx-10 block py-2 rounded-sm font-medium text-white text-lg'> Visit Covid-19 Vaccination Center </button>
+               <Link to="https://www.moh.gov.zm/?page_id=6553" className='w-11/12 text-center mx-auto md:1/2 px-3 my-8 bg-green-400 md:mx-10 block py-2 rounded-sm font-medium text-white text-lg'> Visit Covid-19 Vaccination Center </Link>
             
-            
-
             <footer className='bg-black p-5'>
               <h3 className='text-white'> All1Zed in partnership with Ministry Of Health. </h3>
             </footer>

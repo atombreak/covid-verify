@@ -24,7 +24,7 @@ class Generate extends Component {
     }
     generateCode(e) {
         e.preventDefault()
-        fetch('http://127.0.0.1:8000/users/'+this.nrc.current.value)
+        fetch('/api/users/'+this.nrc.current.value)
         .then(response => response.json())
         .then(data => {
             if(data.id) {
@@ -38,7 +38,7 @@ class Generate extends Component {
                     tel: this.tel.current.value,
                     town: this.town.current.value
                 }
-                fetch('http://127.0.0.1:8000/users/', {
+                fetch('/api/users/', {
                     method: 'POST', 
                     body: JSON.stringify(form),
                     headers: {
@@ -111,3 +111,18 @@ class Generate extends Component {
 Generate.contextType = Context;
 
 export default Generate;
+/*
+<Context.Consumer> 
+{
+    (e,) => {
+        return (
+            <h2> {e} </h2>
+        )
+    }
+    
+}
+<Context.Consumer>
+
+
+
+*/

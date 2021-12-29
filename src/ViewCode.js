@@ -1,7 +1,7 @@
 
 import { Component, createRef } from 'react';
 import QRCode from 'qrcode.react';
-import { findAllInRenderedTree } from 'react-dom/cjs/react-dom-test-utils.production.min';
+
 
 class ViewCode extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class ViewCode extends Component {
 
     componentDidMount() {
         let url = window.location.pathname.split('/')[2];
-        fetch('http://127.0.0.1:8000/users/'+url)
+        fetch('/api/users/'+url)
         .then(response => response.json())
         .then(data => {
             if(data.nrc) {
