@@ -2,7 +2,7 @@
 
 const path = require('path');
 const express = require("express");
-const json = require('json-server');
+// const json = require('json-server');
 
 const app = express();
 const port = process.env.PORT || 9000;
