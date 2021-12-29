@@ -10,7 +10,7 @@ const port = 9000 || process.env.PORT
 app.use(express.static(path.join(__dirname,'..','build')));
 app.use('/api', json.router(path.join(__dirname,'..','db.json')));
 
-console.log(path.join(__dirname,'..','db.json'));
+// console.log(path.join(__dirname,'..','db.json'));
 
 app.all('*', (req,res) => {
     res.sendFile(path.join(__dirname,'..',"build/index.html"));
