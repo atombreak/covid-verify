@@ -4,7 +4,8 @@ import { UserIcon, CalendarIcon, IdentificationIcon, LocationMarkerIcon, MapIcon
 
 import { Context } from './data-context.js';
 
-const url = 'http://localhost:8000/users';
+// const url = 'http://localhost:8000/users';
+const url = '/api/users';
 
 class Generate extends Component {
     static contextType = Context;

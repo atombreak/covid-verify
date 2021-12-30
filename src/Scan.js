@@ -1,7 +1,9 @@
 import QRScan from 'qrscan';
 import {Component, createRef } from 'react';
 import { Link } from 'react-router-dom';
-const url = 'http://localhost:8000/users/';
+
+// const url = 'http://localhost:8000/users/';
+const url = '/api/users';
 
 export default class Scanner extends Component {
     constructor(props){

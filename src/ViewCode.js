@@ -47,7 +47,8 @@ const Print = props => {
     )
 }
 
-const url = 'http://localhost:8000/users/';
+// const url = 'http://localhost:8000/users/';
+const url = '/api/users';
 
 class ViewCode extends Component {
     constructor(props) {
