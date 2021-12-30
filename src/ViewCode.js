@@ -1,7 +1,51 @@
 
 import { Component, createRef } from 'react';
+import { renderToString } from 'react-dom/server';
+import jsPDF from 'jspdf';
 import QRCode from 'qrcode.react';
 
+const Print = props => {
+    return (
+        <div className='w-full p-5 min-h-screen'>
+            { !props.data.error && 
+            <>
+            <div className='w-full flex justify-around items-center'>
+            <QRCode value={props.url} size={300} background='#00ff00' level={'H'} renderAs="canvas"/>
+            
+            </div>
+            </>
+    }
+            <div className='mt-4 p-4'>
+            { props.data.canDownload && <button onClick={props.download} className='p-2 px-10 mb-3 bg-green-500 text-white rounded-lg mx-auto block'> Download Certificate </button>
+}
+            {
+            props.data.nrc && !props.data.error ?
+            (
+            <>
+            <h3 className='text-md text-center'> <b> Name: </b> { props.data.name } </h3>
+            <p className='text-md text-center'> <b> NRC: </b>  { props.data.nrc } </p>
+            <p className='text-md text-center'> <b> Tel: </b>  { props.data.tel } </p>
+            <p className='text-md text-center'> <b> Address: </b>  { props.data.address } </p>
+            <p className='text-md text-center'> <b> Town: </b>  { props.data.town } </p>
+            <p className='text-green-500 text-center font-bold text-lg'> Vaccinted ! </p>
+            <div className='w-full h-5/12 mx-auto bg-blue-300'>
+                
+            </div>
+            </>
+            ) : !props.data.error ? <p className='text-lg text-gray'> loading... </p> : null
+    
+    }
+
+    {
+     props.error && (
+            <h2 className='bg-red-200 text-red-400 p-5 text-lg font-medium'> User is not vaccinated or invalid qrcode </h2>
+        )
+    }
+                
+            </div>
+            </div>
+    )
+}
 
 const url = 'http://localhost:8000/users/';
 
@@ -15,6 +59,7 @@ class ViewCode extends Component {
             address: null,         
             town: null,
             dob: null,
+            canDownload: true
         };
         this.qrcode = createRef();
     }
@@ -35,6 +80,23 @@ class ViewCode extends Component {
     }
 
     downloadQRCode() {
+
+        let string = renderToString(<Print data={this.state} url={this.state.nrc} />);
+        let pdf = new jsPDF({
+            orientation: 'p',
+            unit: 'px',
+            format: "a1",
+            putOnlyUsedFonts: true
+        });
+        this.setState({ canDownload: false });
+        pdf.html(document.body, {
+           callback: doc => {
+                doc.save('vaccine-certifivate-'+this.state.nrc);
+                this.setState({ canDownload: true });
+           }
+       });
+
+        /*
         let canvas = document.querySelector("canvas");
         let url = canvas.toDataURL("image/png");
         let link = document.createElement("a");
@@ -42,48 +104,17 @@ class ViewCode extends Component {
         link.href = url;
         link.dataset.downloadurl = ["image/png",link.download,link.href].join(':');
         link.click();
-    
+   */ 
     }
 
     render() {
         let url = window.location.pathname.split('/')[2];
         return (
-            <div className='w-full p-5 min-h-screen'>
-            { !this.state.error && 
             <>
-            <div className='w-full bg-gray-100'>
-            <QRCode value={url} size={300} backgroundColor='red' level={'H'} renderAs="canvas"/>
-            </div>
-            <button onClick={ this.downloadQRCode } className='p-2 bg-green-300 rounded-lg shadow-sm block my-4 text-white font-bold'> Download Certificate </button>
-            </>
-    }
-            <div className='mt-4 p-4'>
-            {
-            this.state.nrc && !this.error ?
-            (
-            <>
-            <h3 className='text-md'> <b> Name: </b> { this.state.name } </h3>
-            <p className='text-md'> <b> NRC: </b>  { this.state.nrc } </p>
-            <p className='text-md'> <b> Tel: </b>  { this.state.tel } </p>
-            <p className='text-md'> <b> Address: </b>  { this.state.address } </p>
-            <p className='text-md'> <b> Town: </b>  { this.state.town } </p>
-            <p className='text-green-500 font-bold text-lg'> Vaccinted ! </p>
-            <div className='w-full h-5/12 bg-blue-300'>
-                
-            </div>
-            </>
-            ) : !this.state.error ? <p className='text-lg text-gray'> loading... </p> : null
+            <Print data={this.state} url={url} download={e => this.downloadQRCode() }> </Print>
     
-    }
-
-    {
-     this.state.error && (
-            <h2 className='bg-red-200 text-red-400 p-5 text-lg font-medium'> User is not vaccinated or invalid qrcode </h2>
-        )
-    }
-                
-            </div>
-            </div>
+            </>
+            
         )
     }
 }

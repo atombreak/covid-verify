@@ -42,10 +42,13 @@ class Verify extends Component {
 }
     }
     startScan() {
+
     navigator.mediaDevices.getUserMedia(this.constraints)
   .then((stream) => {
-    document.getElementById("vid").srcObject = stream;
-  })
+    
+    this.background.current.srcObject = stream;
+
+   })
   .catch(function (error) {
       console.log(error);
     console.log("Something went wrong!");
@@ -70,7 +73,7 @@ class Verify extends Component {
     }
     render() {
         return (
-            <div className='bg-black min-h-screen w-screen'>
+            <div className='bg-black min-h-screen w-screen relative'>
                 <div className='flex absolute z-50 w-full p-4 justify-between items-center'>
                     <Link to='/' className=''><BackIcon className='h-8 text-white w-8' /> </Link>
                     <select value='default' onChange={this.startScan} className='b2 p-1 px-8 rounded-lg'>
@@ -82,8 +85,8 @@ class Verify extends Component {
                         }
                     </select>
                 </div>
-                <div className='absolute w-screen h-screen'>
-                  <video id='vid' ref={this.background} className='w-full h-full' />
+                <div className='absolute w-full h-full'>
+                  <video ref={this.background} className='h-screen w-screen absolute -z-10 object-cover' />
                 </div>
                 <div className='flex h-screen justify-center items-center relative'>
                     <Scanner/>
