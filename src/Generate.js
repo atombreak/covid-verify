@@ -51,7 +51,7 @@ class Generate extends Component {
                 })
                 .then(response => response.json())
                 .then(data => {
-                    alert(JSON.stringify(data))
+                    // alert(JSON.stringify(data))
                     if(data.id) {
                         this.setState({ finalLink: '/view-code/'+data.nrc });
                         this.finalLink.current.click();
