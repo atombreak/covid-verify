@@ -1,6 +1,8 @@
-import QrReader from 'react-qr-reader';
+import QRScan from 'qrscan';
 import {Component, createRef } from 'react';
 import { Link } from 'react-router-dom';
+const url = 'http://localhost:8000/users/';
+
 export default class Scanner extends Component {
     constructor(props){
         super(props);
@@ -12,7 +14,7 @@ export default class Scanner extends Component {
       }
   handleScan = data => {
     if (data) {
-      alert(data);
+      // (data);
       this.setState({
         finalLink: data
       });
@@ -24,14 +26,14 @@ export default class Scanner extends Component {
   }
   render() {
     return (
-      <div className='w-full h-4/10 mx-auto md:w-5/12'>
-        <QrReader
-          delay={300}
+      <div className='w-full overflow-x-hidden h-4/10 mx-auto md:w-5/12 relative'>
+        <div className='loaderA'></div>
+        <QRScan
+          delay={4}
           onError={this.handleError}
-          onScan={this.handleScan}
-          style={{ width: '100%', height:'100%', margin: "auto" }}
+          onFind={this.handleScan}
           facingMode= {'environment'}
-          resolution= {1000}
+          size={300}
         />
         <Link to={'/view-code/'+this.state.finalLink} ref={this.ref} className='hidden'></Link>
       </div>

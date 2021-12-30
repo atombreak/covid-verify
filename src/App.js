@@ -15,8 +15,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        a: 1, b: 2, c: 4,
+        i: 0,
+        incrementI: e => {
+          this.setState({ i: this.state.i+1 });
+        }
     }
+
+  }
+
+  hello() {
+
   }
 
   render () {

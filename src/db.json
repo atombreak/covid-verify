@@ -209,6 +209,60 @@
       "tel": "0976667767",
       "town": "Lusaka",
       "id": 24
+    },
+    {
+      "nrc": "23322",
+      "name": "michael phiri",
+      "dob": "334",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 25
+    },
+    {
+      "nrc": "1234",
+      "name": "michael phiri",
+      "dob": "56",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 26
+    },
+    {
+      "nrc": "999",
+      "name": "michael phiri",
+      "dob": "21/01/04",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 27
+    },
+    {
+      "nrc": "8998",
+      "name": "michael phiri",
+      "dob": "21/01/04",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 28
+    },
+    {
+      "nrc": "76",
+      "name": "michael phiri",
+      "dob": "21/01/04",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 29
+    },
+    {
+      "nrc": "1234",
+      "name": "michael phiri",
+      "dob": "",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 30
     }
   ]
 }

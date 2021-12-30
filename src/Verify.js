@@ -85,7 +85,7 @@ class Verify extends Component {
                 <div className='absolute w-screen h-screen'>
                   <video id='vid' ref={this.background} className='w-full h-full' />
                 </div>
-                <div className='flex h-screen justify-center items-center'>
+                <div className='flex h-screen justify-center items-center relative'>
                     <Scanner/>
                 </div>
             </div>

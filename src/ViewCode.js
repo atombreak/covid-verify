@@ -3,6 +3,8 @@ import { Component, createRef } from 'react';
 import QRCode from 'qrcode.react';
 
 
+const url = 'http://localhost:8000/users/';
+
 class ViewCode extends Component {
     constructor(props) {
         super(props);
@@ -18,11 +20,12 @@ class ViewCode extends Component {
     }
 
     componentDidMount() {
-        let url = window.location.pathname.split('/')[2];
-        fetch('/api/users/'+url)
+        let id = window.location.pathname.split('/')[2];
+        fetch(url+'?nrc='+id)
         .then(response => response.json())
         .then(data => {
-            if(data.nrc) {
+            data = data[0]
+            if(data && data.nrc) {
            // alert(JSON.stringify(data));
             this.setState(data)
             } else {
@@ -49,7 +52,7 @@ class ViewCode extends Component {
             { !this.state.error && 
             <>
             <div className='w-full bg-gray-100'>
-            <QRCode value={url} style={{ width: '90vw', margin: "20px auto", height: '90vw', maxHeight: '500px'  }} level={'M'} renderAs="canvas"/>
+            <QRCode value={url} size={300} backgroundColor='red' level={'H'} renderAs="canvas"/>
             </div>
             <button onClick={ this.downloadQRCode } className='p-2 bg-green-300 rounded-lg shadow-sm block my-4 text-white font-bold'> Download Certificate </button>
             </>

@@ -94,11 +94,11 @@ class Header extends Component {
                     <div className='w-full mt-4 py-4 flex flex-wrap justify-start items-start'>
                     <CaseData title='Today Cases' color='bg-red-300' value={this.state.info.cases.today} />
                     <CaseData title='Today Tests' color='bg-yellow-300' value={this.state.info.tests.today} />
-                    <CaseData title='Today Recovered' color='bg-green-300' value={this.state.info.recovered.today} />
-                    <CaseData title='Today Deaths' color='bg-green-500' value={this.state.info.deaths.today} />
                     <CaseData title='Cumulative Cases' color='bg-red-500' value={this.state.info.cases.cumulative} />
+                    <CaseData title='Today Recovered' color='bg-green-300' value={this.state.info.recovered.today} />
                     <CaseData title='Cumulative Recovered' color='bg-green-300' value={this.state.info.recovered.today} />
-                    <CaseData title='Cumulative Recovered' color='bg-green-500' value={this.state.info.recovered.cumulative} />
+                    <CaseData title='Today Deaths' color='bg-green-500' value={this.state.info.deaths.today} />
+                    <CaseData title='Cumulative Deaths' color='bg-green-500' value={this.state.info.deaths.cumulative} />
                 </div>
             </header>
             <div className='mt-8' id='covid-19-prevention'>
@@ -108,10 +108,10 @@ class Header extends Component {
             <div className='mt-8'>
                 <h2 className='font-bold p-4 md:px-10 text-2xl'> FAQ About COVID-19 Vaccination </h2>
                 <div className=''>
-                  { this.state.faq.map(faq => <FAQ data={faq} />) }
+                  { this.state.faq.map(faq => <FAQ key={faq.question} data={faq} />) }
                 </div>
                </div>
-               <Link to="https://www.moh.gov.zm/?page_id=6553" className='w-11/12 text-center mx-auto md:1/2 px-3 my-8 bg-green-400 md:mx-10 block py-2 rounded-sm font-medium text-white text-lg'> Visit Covid-19 Vaccination Center </Link>
+               <a href="https://www.moh.gov.zm/?page_id=6553" className='w-11/12 text-center block mx-auto md:1/2 px-3 my-8 bg-green-400 md:mx-10 py-2 rounded-sm font-medium text-white text-lg'> Visit Covid-19 Vaccination Center </a>
             
             <footer className='bg-black p-5'>
               <h3 className='text-white'> All1Zed in partnership with Ministry Of Health. </h3>

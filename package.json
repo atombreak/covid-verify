@@ -10,6 +10,7 @@
     "express": "^4.17.2",
     "json-server": "^0.17.0",
     "qrcode.react": "^1.0.1",
+    "qrscan": "^1.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-qr-code": "^2.0.3",
@@ -19,6 +20,7 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
+    "development": "react-scripts start",
     "start": "node server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
