@@ -2,6 +2,36 @@ import React, { Component, createRef } from 'react';
 import { Link } from "react-router-dom";
 import { ArrowLeftIcon as BackIcon } from '@heroicons/react/solid';
 import Scanner from "./Scan.js";
+
+class ErrorBoundary extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: false
+    };
+  }
+
+  static getDerivedStateFromError() {
+
+  }
+  componentDidCatch() {
+    this.setState({
+      error: true
+    })
+  }
+
+  render () {
+   return this.state.error ?
+    (<div className='p-4'>
+      <h1 className='p-4 bg-red-400 font-medium text-lg'> Something went wrong </h1>
+    </div>
+    ) : this.props.children;
+  }
+
+}
+
+
 class Verify extends Component {
     constructor(props) {
         super(props);
@@ -73,6 +103,7 @@ class Verify extends Component {
     }
     render() {
         return (
+          
             <div className='bg-black min-h-screen w-screen relative'>
                 <div className='flex absolute z-50 w-full p-4 justify-between items-center'>
                     <Link to='/' className=''><BackIcon className='h-8 text-white w-8' /> </Link>
@@ -89,7 +120,7 @@ class Verify extends Component {
                   <video ref={this.background} className='h-screen w-screen absolute -z-10 object-cover' />
                 </div>
                 <div className='flex h-screen justify-center items-center relative'>
-                    <Scanner/>
+                <ErrorBoundary><Scanner/></ErrorBoundary>
                 </div>
             </div>
         )

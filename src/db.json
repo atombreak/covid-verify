@@ -1,5 +1,31 @@
 {
   "users": [
-    
+    {
+      "nrc": "87878",
+      "name": "michael phiri",
+      "dob": "23345687",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 1
+    },
+    {
+      "nrc": "12345",
+      "name": "michael phiri",
+      "dob": "21/01/04",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 2
+    },
+    {
+      "nrc": "12",
+      "name": "michael phiri",
+      "dob": "21",
+      "address": "Chawama Compound",
+      "tel": "0976667767",
+      "town": "Lusaka",
+      "id": 3
+    }
   ]
 }
