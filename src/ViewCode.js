@@ -110,7 +110,7 @@ class ViewCode extends Component {
     downloadQRCode() {
 
         let string = renderToString(<Print data={this.state} url={this.state.nrc} />);
-        alert(window.innerWidth);
+        // alert(window.innerWidth);
         let pdf = new jsPDF({
             orientation: 'p',
             unit: 'pt',
