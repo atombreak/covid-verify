@@ -93,12 +93,12 @@ class Generate extends Component {
                         </label>
 
                         <label htmlFor='town' className='flex rounded-md mb-4 px-2 py-2 border-color-black border-2 items-center justify-around'>
-                            <PhoneIcon className='w-5 h-5' />
+                            <MapIcon className='w-5 h-5' />
                             <input id='town' type='text' ref={this.town} className='w-full ml-2 focus:border-0 focus:outline-0 h-full' placeholder='Enter the town you reside in'/>
                         </label>
 
                         <label htmlFor='tel' className='flex rounded-md mb-4 px-2 py-2 border-color-black border-2 items-center justify-around'>
-                            <MapIcon className='w-5 h-5' />
+                            <PhoneIcon className='w-5 h-5' />
                             <input id='tel' type='tel' ref={this.tel} className='w-full ml-2 focus:border-0 focus:outline-0 h-full' placeholder='Enter your phone number'/>
                         </label>
                         <button className='block mt-3 bg-green-500 hover:bg-green-600 text-white rounded-lg  w-full font-medium py-2 px-10'> Generate </button>
