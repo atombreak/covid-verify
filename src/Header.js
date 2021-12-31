@@ -88,7 +88,7 @@ class Header extends Component {
                     </div>
                     </div>
                     <div className='w-full h-full mt-8 md:mt-0 flex justify-center items-center'>
-                      <img src='/covid.png' className='h-60 w-60'/>
+                      <img src='/covid.svg' className='h-60 w-60'/>
                     </div>
                     </div>
                     <div className='w-full mt-4 py-4 flex flex-wrap justify-start items-start'>
