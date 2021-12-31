@@ -30,7 +30,7 @@ const Print = props => {
             <div className='w-full flex content-center justify-around h-auto p-4 mt-4'>
                 <div className='w-3/12 h-full '>
                     <div className='w-full h-16 my-2 p-2  flex justify-center content-center'>
-                    <img src='/flag_of_zambia.jpeg' className='h-full max-w-full object-center'/>
+                    <img src='/Flag_of_Zambia.jpeg' className='h-full max-w-full object-center'/>
                     </div>
                     <div className='w-full h-16 my-2  flex justify-center content-center'>
                     <img src='/kot.jpg' className='h-full max-w-full object-center'/>
@@ -47,7 +47,7 @@ const Print = props => {
             </>
     }
             <div className='mt-4 p-4'>
-            { (props.data.canDownload && !props.data.error) && <button onClick={props.download} className='p-2 px-10 mb-3 bg-green-500 text-white rounded-lg mx-auto block'> Download Certificate </button>
+            { (props.data.canDownload && !props.data.error && props.data.nrc) && <button onClick={props.download} className='p-2 px-10 mb-3 bg-green-500 text-white rounded-lg mx-auto block'> Download Certificate </button>
 }
             {
             props.data.nrc && !props.data.error ?
