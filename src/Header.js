@@ -93,7 +93,6 @@ class Header extends Component {
                     </div>
                     <div className='w-full mt-4 py-4 flex flex-wrap justify-start items-start'>
                     <CaseData title='Today Cases' color='bg-red-300' value={this.state.info.cases.today} />
-                    <CaseData title='Today Tests' color='bg-yellow-300' value={this.state.info.tests.today} />
                     <CaseData title='Cumulative Cases' color='bg-red-500' value={this.state.info.cases.cumulative} />
                     <CaseData title='Today Recovered' color='bg-green-300' value={this.state.info.recovered.today} />
                     <CaseData title='Cumulative Recovered' color='bg-green-300' value={this.state.info.recovered.today} />
